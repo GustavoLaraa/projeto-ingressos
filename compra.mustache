@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Ingresso</title>
+</head>
+<body>
+    <h1>Comprar Ingresso</h1>
+    <form id="comprarForm">
+        <label for="tipo">Tipo de Ingresso:</label>
+        <input type="text" id="tipo" name="tipo" required>
+        <br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" required>
+        <br>
+        <button type="submit">Comprar</button>
+    </form>
+
+    <script>
+        document.getElementById('comprarForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const tipo = document.getElementById('tipo').value;
+            const quantidade = document.getElementById('quantidade').value;
+
+            const response = await fetch('/api/comprar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify({ tipo, quantidade })
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert('Ingresso comprado com sucesso!');
+                window.location.href = '/historico';
+            } else {
+                alert(`Erro: ${result.message}`);
+            }
+        });
+    </script>
+</body>
+</html>
