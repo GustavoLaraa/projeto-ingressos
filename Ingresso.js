@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 
-const IngressoSchema = new mongoose.Schema({
-  tipo: {
-    type: String,
-    required: [true, "O tipo do ingresso é obrigatório!"],
-  },
-  quantidade: {
-    type: Number,
-    required: [true, "A quantidade é obrigatória!"],
-  }
+const ingressoSchema = new mongoose.Schema({
+  tipo: { type: String, required: true },
+  preco: { type: Number, required: true },
+  quantidade: { type: Number, required: true },
+  descricao: { type: String },
 }, { timestamps: true });
 
-module.exports = mongoose.model('Ingresso', IngressoSchema, 'ingressos');
+module.exports = mongoose.model('Ingresso', ingressoSchema);
