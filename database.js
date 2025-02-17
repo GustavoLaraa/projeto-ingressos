@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // Para carregar as variáveis do .env
+require('dotenv').config(); 
 
 const mongoURI = process.env.MONGODB_URI;
 
