@@ -12,7 +12,7 @@ projeto-ingressos/
 │   │   ├── index.js          
 │   │   ├── User.js            
 │   │   ├── Ingresso.js        
-│   │   ├── Compra.js          <-- Novo arquivo
+│   │   ├── Compra.js         
 │   ├── /routes
 │   │   ├── authRoutes.js      
 │   │   ├── userRoutes.js      
