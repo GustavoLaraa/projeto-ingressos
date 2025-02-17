@@ -4,9 +4,9 @@ require('dotenv').config();
 
 const gerarToken = (user) => {
   return jwt.sign(
-    { id: user._id, email: user.email }, // Payload
+    { id: user._id, email: user.email }, 
     process.env.JWT_SECRET, // Chave secreta
-    { expiresIn: process.env.JWT_EXPIRES_IN || '1d' } // Tempo de expiração
+    { expiresIn: process.env.JWT_EXPIRES_IN || '1d' } 
   );
 };
 
@@ -58,7 +58,6 @@ exports.login = async (req, res) => {
 
     const token = gerarToken(user);
 
-    // Remove a senha da resposta
     const userResponse = { ...user._doc };
     delete userResponse.senha;
 
