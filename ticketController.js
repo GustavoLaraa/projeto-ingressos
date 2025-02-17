@@ -143,7 +143,6 @@ const historicoCompras = async (req, res) => {
   }
 };
 
-// Exportação correta
 module.exports = {
   listarTickets,
   criarTicket,
