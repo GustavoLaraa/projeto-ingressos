@@ -1,0 +1,17 @@
+<!-- src/views/history.mustache -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico de Compras</title>
+</head>
+<body>
+  <h1>Histórico de Compras</h1>
+  <ul>
+    {{#tickets}}
+      <li>{{tipo}} - {{preco}} ({{quantidade}} unidade(s))</li>
+    {{/tickets}}
+  </ul>
+</body>
+</html>
